@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/routes/app_pages.dart';
+import 'package:task_management_app/app/utills/widget/style/AppColors.dart';
 
 class header extends StatelessWidget {
   const header({
@@ -14,8 +15,7 @@ class header extends StatelessWidget {
     return SizedBox(
       height: Get.height * 0.1,
       child: Padding(
-        padding:
-            const EdgeInsets.only(left: 40, right: 40, top: 20),
+        padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -25,13 +25,11 @@ class header extends StatelessWidget {
               children: const [
                 Text(
                   'Task Management',
-                  style:
-                      TextStyle(fontSize: 20, color: Colors.grey),
+                  style: TextStyle(fontSize: 20, color: AppColors.primarytext),
                 ),
                 Text(
                   'Manage task mode easy with friends',
-                  style:
-                      TextStyle(fontSize: 16, color: Colors.grey),
+                  style: TextStyle(fontSize: 16, color: AppColors.primarytext),
                 ),
               ],
             ),
@@ -44,17 +42,15 @@ class header extends StatelessWidget {
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
-                      contentPadding: const EdgeInsets.only(
-                          left: 40, right: 10),
+                      contentPadding:
+                          const EdgeInsets.only(left: 40, right: 10),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                            const BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                            const BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                       ),
                       prefixIcon: const Icon(
                         Icons.search,
@@ -66,22 +62,22 @@ class header extends StatelessWidget {
               width: 20,
             ),
             const Icon(
-              Ionicons.notifications,
-              color: Colors.grey,
+              Icons.notifications,
+              color: AppColors.primarytext,
+              size: 30,
             ),
             const SizedBox(
               width: 20,
             ),
-            const Icon(Ionicons.log_out_outline),
-            const SizedBox(
-              width: 20,
-            ),
+            // const Icon(Icons.logout_outlined),
+            // const SizedBox(
+            //   width: 20,
+            // ),
             GestureDetector(
               onTap: () {
                 Get.defaultDialog(
                   title: 'Sign Out',
-                  content: const Text(
-                      'Are You Sure Want to Sign Out?'),
+                  content: const Text('Are You Sure Want to Sign Out?'),
                   cancel: ElevatedButton(
                     onPressed: () => Get.back(),
                     child: const Text('Cancel'),
@@ -94,16 +90,16 @@ class header extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Text(
-                    'Sign Out',
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                  Text('Sign Out',
+                      style: TextStyle(
+                          color: AppColors.primarytext, fontSize: 18)),
                   SizedBox(
                     width: 5,
                   ),
                   Icon(
-                    Ionicons.log_out_outline,
-                    color: Colors.grey,
+                    Icons.logout_outlined,
+                    color: AppColors.primarytext,
+                    size: 30,
                   ),
                 ],
               ),
