@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "559967414499",
+    "project_id": "task-management-apps-61e5f",
+    "storage_bucket": "task-management-apps-61e5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559967414499:android:a82c889c84947163ad3dd6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_pertama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559967414499-m0v4clg3a0uvr69b7cbm5kst39qplqnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_SH96y6_OgZWNTu-n6ZV5Kh6Tz4DVsMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559967414499-m0v4clg3a0uvr69b7cbm5kst39qplqnj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "559967414499-58imvldrn2dc7o4ep3mvrpm3v4qfkkfs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterPertama"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559967414499:android:4ec2297e4f8c7b1fad3dd6",
+        "android_client_info": {
+          "package_name": "com.example.task_management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559967414499-igk4rutih36jkttgta4esv899ftcagl9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.task_management_app",
+            "certificate_hash": "63de74ff0f2700fd0dfa1379f382420c9dffc157"
+          }
+        },
+        {
+          "client_id": "559967414499-m0v4clg3a0uvr69b7cbm5kst39qplqnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_SH96y6_OgZWNTu-n6ZV5Kh6Tz4DVsMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559967414499-m0v4clg3a0uvr69b7cbm5kst39qplqnj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "559967414499-58imvldrn2dc7o4ep3mvrpm3v4qfkkfs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterPertama"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>559967414499-58imvldrn2dc7o4ep3mvrpm3v4qfkkfs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.559967414499-58imvldrn2dc7o4ep3mvrpm3v4qfkkfs</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>559967414499-igk4rutih36jkttgta4esv899ftcagl9.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSYhLukoC59i9TivSCZiRHz9m-6GNmhLk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>559967414499</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterPertama</string>
+	<key>PROJECT_ID</key>
+	<string>task-management-apps-61e5f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>task-management-apps-61e5f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:559967414499:ios:0c728f53c3e487a3ad3dd6</string>
+</dict>
+</plist>
