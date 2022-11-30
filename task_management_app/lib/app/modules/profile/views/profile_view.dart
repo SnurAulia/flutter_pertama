@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:task_management_app/app/data/controller/auth_controller.dart';
 import 'package:task_management_app/app/utills/widget/MyTask.dart';
 import 'package:unicons/unicons.dart';
 import 'package:get/get.dart';
@@ -13,11 +14,12 @@ import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+  final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _drawerKey,
-      drawer: const Sidebar(),
+      drawer: const SizedBox(width: 150, child: Sidebar()),
       backgroundColor: AppColors.primaryBg,
       body: Row(
         children: [
@@ -71,36 +73,38 @@ class ProfileView extends GetView<ProfileController> {
                               ),
                               const Spacer(),
                               GestureDetector(
-              onTap: () {
-                Get.defaultDialog(
-                  title: 'Sign Out',
-                  content: const Text('Are You Sure Want to Sign Out?'),
-                  cancel: ElevatedButton(
-                    onPressed: () => Get.back(),
-                    child: const Text('Cancel'),
-                  ),
-                  confirm: ElevatedButton(
-                    onPressed: () => Get.toNamed(Routes.LOGIN),
-                    child: const Text('Sign Out'),
-                  ),
-                );
-              },
-              child: Row(
-                children: const [
-                  Text('Sign Out',
-                      style: TextStyle(
-                          color: AppColors.primarytext, fontSize: 16)),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    Icons.logout_outlined,
-                    color: AppColors.primarytext,
-                    size: 30,
-                  ),
-                ],
-              ),
-            )
+                                onTap: () {
+                                  Get.defaultDialog(
+                                    title: 'Sign Out',
+                                    content: const Text(
+                                        'Are You Sure Want to Sign Out?'),
+                                    cancel: ElevatedButton(
+                                      onPressed: () => Get.back(),
+                                      child: const Text('Cancel'),
+                                    ),
+                                    confirm: ElevatedButton(
+                                      onPressed: () => authC.logout(),
+                                      child: const Text('Sign Out'),
+                                    ),
+                                  );
+                                },
+                                child: Row(
+                                  children: const [
+                                    Text('Sign Out',
+                                        style: TextStyle(
+                                            color: AppColors.primarytext,
+                                            fontSize: 16)),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Icon(
+                                      Icons.logout_outlined,
+                                      color: AppColors.primarytext,
+                                      size: 30,
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                         ),
