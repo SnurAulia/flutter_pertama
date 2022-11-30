@@ -61,7 +61,7 @@ class FriendsView extends GetView<FriendsController> {
                                           color: AppColors.primarytext),
                                     ),
                                     Text(
-                                      'Manage task mode easy with friends',
+                                      'Manage task mode easy',
                                       style: TextStyle(
                                           fontSize: 14,
                                           color: AppColors.primarytext),
@@ -89,7 +89,7 @@ class FriendsView extends GetView<FriendsController> {
                               ],
                             ),
                           ),
-      
+
                     // content/isi
                     Expanded(
                       child: Container(
@@ -128,7 +128,8 @@ class FriendsView extends GetView<FriendsController> {
                                     child: Stack(
                                       children: [
                                         ClipRRect(
-                                          borderRadius: BorderRadius.circular(25),
+                                          borderRadius:
+                                              BorderRadius.circular(25),
                                           child: const Image(
                                             image: NetworkImage(
                                                 'https://th.bing.com/th/id/R.4423b396783ee5e3c974c3f42d31a5d2?rik=B2TGBxm6KvE62Q&riu=http%3a%2f%2fi1.hdslb.com%2fbfs%2farchive%2f74188e89512904b3c99db99b5cd7eb4ed6876e80.jpg&ehk=w8PLQ5hrZzAC2zHbr2kFvq7R7YsE5GWxGBw6tP9KFis%3d&risl=&pid=ImgRaw&r=0'),
@@ -159,8 +160,8 @@ class FriendsView extends GetView<FriendsController> {
                                                                   BorderRadius
                                                                       .circular(
                                                                           30))),
-                                                  child: Icon(
-                                                      Icons.add_circle_outline)),
+                                                  child: Icon(Icons
+                                                      .add_circle_outline)),
                                             ))
                                       ],
                                     ),
