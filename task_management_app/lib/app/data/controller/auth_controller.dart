@@ -9,6 +9,26 @@ import 'package:task_management_app/app/routes/app_pages.dart';
 class AuthController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   UserCredential? _userCredential;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late TextEditingController searchFriendsController;
+
+  @override
+  void onInit() {
+    super.onInit();
+    searchFriendsController = TextEditingController();
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    searchFriendsController.dispose();
+  }
+
   Future signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -43,6 +63,19 @@ class AuthController extends GetxController {
         'createdAt': _userCredential!.user!.metadata.creationTime.toString(),
         'LastLoginat':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
+        // 'List_cari':
+      }).then((value) {
+        String temp = '';
+        try {
+          for (var i = 0; i < googleUser.displayName!.length; i++) {
+            temp = temp + googleUser.displayName![i];
+            users.doc(googleUser.email).set({
+              'List_cari': FieldValue.arrayUnion([temp.toUpperCase()])
+            }, SetOptions(merge: true));
+          }
+        } catch (e) {
+          print(e);
+        }
       });
     } else {
       users.doc(googleUser.email).set({
@@ -57,5 +90,35 @@ class AuthController extends GetxController {
     await FirebaseAuth.instance.signOut();
     GoogleSignIn().signOut();
     Get.offAllNamed(Routes.LOGIN);
+  }
+
+  var kataCari = [].obs;
+  var hasilCari = [].obs;
+  void searchFriends(String keyword) async {
+    CollectionReference users = firestore.collection('users');
+
+    if (keyword.isNotEmpty) {
+      final hasilQuery = await users
+          .where('List_cari', arrayContains: keyword.toUpperCase())
+          .get();
+      if (hasilQuery.docs.isNotEmpty) {
+        for (var i = 0; i < hasilQuery.docs.length; i++) {
+          kataCari.add(hasilQuery.docs[i].data() as Map<String, dynamic>);
+        }
+      }
+
+      if (kataCari.isNotEmpty) {
+        kataCari.forEach((element) {
+          print(element);
+          hasilCari.add(element);
+        });
+        kataCari.clear();
+      }
+    } else {
+      kataCari.value = [];
+      hasilCari.value = [];
+    }
+    kataCari.refresh();
+    hasilCari.refresh();
   }
 }

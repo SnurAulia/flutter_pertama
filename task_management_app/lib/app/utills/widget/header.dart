@@ -57,7 +57,8 @@ class header extends StatelessWidget {
                         color: Colors.black,
                       ),
                       hintText: 'Search'),
-                )),
+                ),
+                ),
             const SizedBox(
               width: 20,
             ),
