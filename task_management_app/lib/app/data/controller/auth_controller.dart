@@ -29,7 +29,7 @@ class AuthController extends GetxController {
     searchFriendsController.dispose();
   }
 
-  Future signInWithGoogle() async {
+  Future<void> signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -64,12 +64,12 @@ class AuthController extends GetxController {
         'LastLoginat':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
         // 'List_cari':
-      }).then((value) {
+      }).then((value) async {
         String temp = '';
         try {
           for (var i = 0; i < googleUser.displayName!.length; i++) {
             temp = temp + googleUser.displayName![i];
-            users.doc(googleUser.email).set({
+            await users.doc(googleUser.email).set({
               'List_cari': FieldValue.arrayUnion([temp.toUpperCase()])
             }, SetOptions(merge: true));
           }
@@ -78,7 +78,7 @@ class AuthController extends GetxController {
         }
       });
     } else {
-      users.doc(googleUser.email).set({
+      users.doc(googleUser.email).update({
         'LastLoginat':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
       });
@@ -108,6 +108,7 @@ class AuthController extends GetxController {
       }
 
       if (kataCari.isNotEmpty) {
+        hasilCari.value = [];
         kataCari.forEach((element) {
           print(element);
           hasilCari.add(element);
