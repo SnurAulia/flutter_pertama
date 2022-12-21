@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:task_management_app/app/data/controller/auth_controller.dart';
 import 'package:task_management_app/app/utills/widget/MyFriends.dart';
+import 'package:task_management_app/app/utills/widget/PeopleYouMayKnow.dart';
 import 'package:unicons/unicons.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
@@ -159,74 +160,24 @@ class FriendsView extends GetView<FriendsController> {
                                         color: AppColors.primarytext,
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 200,
-                                      child: ListView.builder(
-                                        scrollDirection: Axis.horizontal,
-                                        shrinkWrap: true,
-                                        clipBehavior: Clip.antiAlias,
-                                        itemCount: 10,
-                                        itemBuilder: (context, index) {
-                                          return Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Stack(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  child: const Image(
-                                                    image: NetworkImage(
-                                                        'https://th.bing.com/th/id/R.4423b396783ee5e3c974c3f42d31a5d2?rik=B2TGBxm6KvE62Q&riu=http%3a%2f%2fi1.hdslb.com%2fbfs%2farchive%2f74188e89512904b3c99db99b5cd7eb4ed6876e80.jpg&ehk=w8PLQ5hrZzAC2zHbr2kFvq7R7YsE5GWxGBw6tP9KFis%3d&risl=&pid=ImgRaw&r=0'),
-                                                  ),
-                                                ),
-                                                const Positioned(
-                                                  bottom: 10,
-                                                  left: 30,
-                                                  child: Text(
-                                                    'Alicia Jasmine',
-                                                    style: TextStyle(
-                                                        color:
-                                                            Color(0xFF000000)),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                    bottom: 0,
-                                                    right: 0,
-                                                    child: SizedBox(
-                                                      height: 35,
-                                                      width: 35,
-                                                      child: ElevatedButton(
-                                                          onPressed: () {},
-                                                          style: ElevatedButton.styleFrom(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .zero,
-                                                              shape: RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              30))),
-                                                          child: const Icon(Icons
-                                                              .add_circle_outline)),
-                                                    ))
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                    const MyFriends(),
+                                    PeopleYouMayKnow(),
+                                    MyFriends(),
                                   ],
                                 )
                               : ListView.builder(
                                   padding: EdgeInsets.all(8),
                                   itemCount: authCont.hasilCari.length,
                                   itemBuilder: (context, index) => ListTile(
+                                    onTap: () => authCont.addFriends(
+                                        authCont.hasilCari[index]['email']),
                                     leading: ClipRRect(
                                       borderRadius: BorderRadius.circular(25),
                                       child: Image(
                                         image: NetworkImage(
                                             authCont.hasilCari[index]['photo']),
+                                        height: Get.width * 0.55,
+                                        width: Get.width * 0.4,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                     title:
