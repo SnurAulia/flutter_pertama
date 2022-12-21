@@ -175,7 +175,7 @@ class FriendsView extends GetView<FriendsController> {
                                       child: Image(
                                         image: NetworkImage(
                                             authCont.hasilCari[index]['photo']),
-                                        height: Get.width * 0.55,
+                                        height: Get.width * 0.35,
                                         width: Get.width * 0.4,
                                         fit: BoxFit.cover,
                                       ),

@@ -36,6 +36,9 @@ class PeopleYouMayKnow extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25),
                       child: Image(
                         image: NetworkImage(hasil['photo']),
+                        height: 200,
+                        width: 200,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     Positioned(
@@ -43,7 +46,8 @@ class PeopleYouMayKnow extends StatelessWidget {
                       left: 30,
                       child: Text(
                         hasil['name'],
-                        style: const TextStyle(color: Color(0xFF000000)),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 252, 252, 252)),
                       ),
                     ),
                     Positioned(
@@ -53,7 +57,8 @@ class PeopleYouMayKnow extends StatelessWidget {
                           height: 35,
                           width: 35,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () =>
+                                  authCont.addFriends(hasil['email']),
                               style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                   shape: RoundedRectangleBorder(

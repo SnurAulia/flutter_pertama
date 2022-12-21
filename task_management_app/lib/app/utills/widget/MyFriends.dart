@@ -41,7 +41,7 @@ class MyFriends extends StatelessWidget {
                 height: 20,
               ),
               SizedBox(
-                height: 200,
+                height: 400,
                 child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
                   stream: authCont.streamFriends(),
                   builder: (context, snapshot) {
@@ -75,6 +75,9 @@ class MyFriends extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(25),
                                       child: Image(
                                         image: NetworkImage(data!['photo']),
+                                        height: Get.width * 0.35,
+                                        width: Get.width * 0.4,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                     Text(data['name'],
