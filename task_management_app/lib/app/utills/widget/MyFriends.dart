@@ -41,13 +41,14 @@ class MyFriends extends StatelessWidget {
                 height: 20,
               ),
               SizedBox(
-                height: 400,
+                // height: 400,
                 child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
                   stream: authCont.streamFriends(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
                     }
+                    
 
                     var myFriends = (snapshot.data!.data()
                         as Map<String, dynamic>)['emailFriends'] as List;

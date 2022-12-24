@@ -80,6 +80,11 @@ class AuthController extends GetxController {
       });
     } else {
       users.doc(googleUser.email).set({
+        'uid': _userCredential!.user!.uid,
+        'name': googleUser.displayName,
+        'email': googleUser.email,
+        'photo': googleUser.photoUrl,
+        'createdAt': _userCredential!.user!.metadata.creationTime.toString(),
         'LastLoginat':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
       });
